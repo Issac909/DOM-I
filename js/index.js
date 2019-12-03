@@ -41,30 +41,33 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
+//Circle Image
 const headerImage = document.querySelector('#cta-img');
 headerImage.src = 'img/header-img.png';
 
-const navbar = document.querySelectorAll('nav a');
-for(let i = 1;i<7;i++){
-navbar[i-1].textContent = siteContent.nav[`nav-item-${i}`]};
+//Nav text
+const navBar = document.querySelectorAll('nav a');
+// for(let i = 0;i<6;i++){
+// navbar[i].textContent = siteContent.nav[`nav-item-${i + 1}`]};
 
-// Array.from(navBar).forEach((link, index) => {
-//   link[index] = siteContent.nav[`nav-item-${index + 1}`]
-// });
+Array.from(navBar).forEach((a, i) => {
+  a.textContent = siteContent.nav[`nav-item-${i + 1}`]
+});
 
-
-//Dom
+//Dom header
 const domText = document.querySelector('.cta .cta-text h1');
+
 domText.textContent = siteContent["cta"]["h1"];
+// domText.split('/\r?\n/g');
 
 //Get Started Button
 const domButton = document.querySelector('.cta .cta-text button');
+
 domButton.textContent = siteContent.cta['button'];
 
 
-//Headers above image
+//Headers above mid-section image
 const topSectionH = document.querySelectorAll('.top-content .text-content h4');
-
 
 topSectionH[0].textContent = siteContent["main-content"]["features-h4"];
 topSectionH[1].textContent = siteContent["main-content"]["about-h4"];
@@ -79,45 +82,52 @@ topSectionP[1].textContent = siteContent["main-content"]["about-content"];
 
 //Middle image
 const midImage = document.querySelector('.middle-img');
+
 midImage.src = "img/mid-page-accent.jpg";
 
 //Middle section bottom headers
 const botSectionH = document.querySelectorAll('.bottom-content .text-content h4');
+
 botSectionH[0].textContent = siteContent["main-content"]["services-h4"];
 botSectionH[1].textContent = siteContent["main-content"]["product-h4"];
 botSectionH[2].textContent = siteContent["main-content"]["vision-h4"];
 
 //Middle section bottom paragraphs
 const botSectionP = document.querySelectorAll('.bottom-content .text-content p');
+
 botSectionP[0].textContent = siteContent["main-content"]["services-content"];
 botSectionP[1].textContent = siteContent["main-content"]["product-content"];
 botSectionP[2].textContent = siteContent["main-content"]["vision-content"];
 
 //Contact section geading
 const contactH = document.querySelector('.contact h4');
+
 contactH.textContent = siteContent["contact"]["contact-h4"];
 
 const contactP = document.querySelectorAll('.contact p');
+
 contactP[0].textContent = siteContent["contact"]["address"];
 contactP[1].textContent = siteContent["contact"]["phone"];
 contactP[2].textContent = siteContent["contact"]["email"];
 
 //Footer
-
 const footer = document.querySelector('footer p');
+
 footer.textContent = siteContent['footer']['copyright'];
 
 
-//Green nav bar
+//Green nav links
 const navbarGreen = document.querySelectorAll('nav a');
+
 Array.from(navbarGreen).forEach((link)=> {link.style.color = 'green'});
 
-//Append and Prepend
+//Creating 2 nav elements
 const navbarParent = document.querySelector('nav');
 const newLink = document.createElement('a');
-newLink.textContent="Yoo"
-navbarParent.append(newLink);
-
 const newLink2 = document.createElement('a');
+//Giving the 2 elements text 
+newLink.textContent="Yoo"
 newLink2.textContent="Boop"
+//Append and Prepend (adding) to the navbar
+navbarParent.append(newLink);
 navbarParent.prepend(newLink2);
